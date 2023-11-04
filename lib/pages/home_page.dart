@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_medical_app/widgets/doctor_item.dart';
+import 'package:flutter_medical_app/widgets/specialist_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -127,6 +129,109 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     )
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                padding: const EdgeInsets.only(left: 16),
+                height: 64,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(95, 179, 173, 172),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: const Row(
+                  children: [
+                    Icon(
+                      Icons.search,
+                      size: 32,
+                      color: Colors.black54,
+                    ),
+                    SizedBox(width: 12),
+                    Text(
+                      "How can we help you?",
+                      style: TextStyle(
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                height: 60,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    SpecialistItem(
+                      imagepath: 'assets/clean.png',
+                      imageName: 'Dentist',
+                    ),
+                    SizedBox(width: 8),
+                    SpecialistItem(
+                      imagepath: 'assets/knife.png',
+                      imageName: "Surgeon",
+                    ),
+                    SizedBox(width: 8),
+                    SpecialistItem(
+                      imagepath: 'assets/lungs.png',
+                      imageName: "Therapy",
+                    ),
+                    SizedBox(width: 8),
+                    SpecialistItem(
+                      imagepath: 'assets/hormones.png',
+                      imageName: "Physiologist",
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Doctor list',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    'See all',
+                    style: TextStyle(
+                      color: Colors.black45,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                height: 210,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    DoctorItem(
+                      image: 'assets/1.png',
+                      name: 'Nycta Gima',
+                      specialist: 'Pediatrician',
+                    ),
+                    DoctorItem(
+                      image: 'assets/2.png',
+                      name: 'Indah Kusumaningrum',
+                      specialist: 'Odontimologist',
+                    ),
+                    DoctorItem(
+                      image: 'assets/3.png',
+                      name: 'Reisa Broto ASmoro',
+                      specialist: 'Surgeon',
+                    ),
+                    DoctorItem(
+                      image: 'assets/4.png',
+                      name: 'Mesty Ariotedjo',
+                      specialist: 'Ophtamologist',
+                    ),
                   ],
                 ),
               ),
